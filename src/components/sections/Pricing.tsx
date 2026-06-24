@@ -1,75 +1,27 @@
+"use client";
+
 import { ButtonLink } from "@/components/ui/button-link";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2 } from "lucide-react";
-
-const plans = [
-  {
-    name: "Starter",
-    price: "$2,500",
-    description: "For simple apps with one core feature.",
-    features: [
-      "Up to 5 screens / pages",
-      "1 core feature built",
-      "1-week handoff training",
-      "Plain-English documentation",
-      "30 days post-launch support",
-    ],
-    cta: "Get Started",
-    highlight: false,
-  },
-  {
-    name: "Builder",
-    price: "$6,500",
-    description: "For full-featured apps most founders need.",
-    features: [
-      "Up to 15 screens / pages",
-      "Up to 5 features",
-      "2-week hands-on training",
-      "Video walkthroughs included",
-      "90 days post-launch support",
-      "1 minor update per month",
-    ],
-    cta: "Most Popular",
-    highlight: true,
-  },
-  {
-    name: "Growth",
-    price: "Custom",
-    description: "For complex products or ongoing collaboration.",
-    features: [
-      "Unlimited screens & features",
-      "Dedicated project manager",
-      "Monthly strategy sessions",
-      "Priority support (24h response)",
-      "Quarterly feature roadmap",
-      "Team training included",
-    ],
-    cta: "Talk to Us",
-    highlight: false,
-  },
-];
+import { useTranslations } from "@/contexts/LanguageContext";
 
 export function Pricing() {
+  const { t } = useTranslations();
+  const p = t.pricing;
+
   return (
     <section id="pricing" className="py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-            Pricing
+            {p.label}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A]">
-            Transparent pricing, no surprises
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-            Every plan includes full source code ownership and a training program.
-            You&apos;ll never be locked in.
-          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A]">{p.title}</h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto">{p.sub}</p>
         </div>
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map(({ name, price, description, features, cta, highlight }) => (
+          {p.plans.map(({ name, price, description, features, cta, highlight }) => (
             <div
               key={name}
               className={`relative rounded-2xl border p-8 flex flex-col ${
@@ -80,7 +32,7 @@ export function Pricing() {
             >
               {highlight && (
                 <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#F97316] text-white px-4 py-1 text-xs font-semibold">
-                  Most Popular
+                  {p.mostPopular}
                 </Badge>
               )}
 
@@ -94,9 +46,9 @@ export function Pricing() {
                 <span className={`text-4xl font-bold ${highlight ? "text-white" : "text-[#0F172A]"}`}>
                   {price}
                 </span>
-                {price !== "Custom" && (
+                {price.startsWith('$') && (
                   <span className={`text-sm ml-1 ${highlight ? "text-indigo-200" : "text-muted-foreground"}`}>
-                    / project
+                    {p.perProject}
                   </span>
                 )}
               </div>
@@ -128,16 +80,16 @@ export function Pricing() {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-8">
-          Not sure which plan fits?{" "}
+          {p.notSure}{" "}
           <a
             href="https://calendly.com/kiento0905-hec/new-meeting"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:underline cursor-pointer"
           >
-            Book a free 30-min call
+            {p.bookCall}
           </a>{" "}
-          and we&apos;ll figure it out together.
+          {p.figureOut}
         </p>
       </div>
     </section>
