@@ -14,27 +14,34 @@ export function CTABanner() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <ButtonLink
-            href="mailto:hello@gojo.app"
-            size="lg"
-            className="bg-[#F97316] hover:bg-[#EA6C0A] text-white px-10 h-12 text-base font-semibold transition-colors duration-200 shadow-lg shadow-orange-900/30"
+          <a
+            href="https://calendly.com/kiento0905-hec/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-10 h-12 text-base font-semibold rounded-lg bg-[#F97316] hover:bg-[#EA6C0A] text-white transition-colors duration-200 shadow-lg shadow-orange-900/30 cursor-pointer"
           >
             Book a Free Call
             <ArrowRight size={18} className="ml-2" />
-          </ButtonLink>
-          <ButtonLink
+          </a>
+          <a
             href="#pricing"
-            size="lg"
-            variant="outline"
-            className="px-10 h-12 text-base border-white/40 text-white hover:bg-white/10 transition-colors duration-200"
+            className="inline-flex items-center justify-center px-10 h-12 text-base font-medium rounded-lg border border-white/50 text-white hover:bg-white/10 transition-colors duration-200 cursor-pointer"
           >
             View Pricing First
-          </ButtonLink>
+          </a>
         </div>
 
-        <p className="mt-8 text-sm text-indigo-300">
-          Typically responds within 1 business day &mdash; no automated bots, just humans.
-        </p>
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-indigo-300">
+          <a href="tel:4132104239" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            (413) 210-4239
+          </a>
+          <span className="hidden sm:block opacity-40">&bull;</span>
+          <a href="mailto:kientrungto95@gmail.com" className="hover:text-white transition-colors duration-200 cursor-pointer">
+            kientrungto95@gmail.com
+          </a>
+          <span className="hidden sm:block opacity-40">&bull;</span>
+          <span>Responds within 1 business day</span>
+        </div>
       </div>
     </section>
   );

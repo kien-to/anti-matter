@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Zap } from "lucide-react";
+import { Zap, Phone, Mail, CalendarDays } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -34,9 +34,40 @@ export function Footer() {
               </span>
               Gojo
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed mb-5">
               Helping non-technical founders build apps they understand, own, and can grow.
             </p>
+            <ul className="space-y-2.5">
+              <li>
+                <a
+                  href="tel:4132104239"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  <Phone size={14} className="text-slate-500" />
+                  (413) 210-4239
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:kientrungto95@gmail.com"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  <Mail size={14} className="text-slate-500" />
+                  kientrungto95@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://calendly.com/kiento0905-hec/new-meeting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
+                >
+                  <CalendarDays size={14} className="text-slate-500" />
+                  Book a free call
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Link columns */}

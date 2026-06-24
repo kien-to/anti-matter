@@ -41,9 +41,14 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <ButtonLink href="#contact" variant="ghost">
+          <a
+            href="https://calendly.com/kiento0905-hec/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-8 px-2.5 text-sm font-medium rounded-lg hover:bg-muted hover:text-foreground transition-colors duration-200 cursor-pointer"
+          >
             Book a Call
-          </ButtonLink>
+          </a>
           <ButtonLink
             href="#contact"
             className="bg-[#F97316] hover:bg-[#EA6C0A] text-white transition-colors duration-200"

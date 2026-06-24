@@ -50,7 +50,7 @@ export function FAQ() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             Can&apos;t find what you&apos;re looking for?{" "}
-            <a href="#contact" className="text-primary hover:underline cursor-pointer">
+            <a href="mailto:kientrungto95@gmail.com" className="text-primary hover:underline cursor-pointer">
               Just ask us directly.
             </a>
           </p>

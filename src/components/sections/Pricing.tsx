@@ -129,7 +129,12 @@ export function Pricing() {
 
         <p className="text-center text-sm text-muted-foreground mt-8">
           Not sure which plan fits?{" "}
-          <a href="#contact" className="text-primary hover:underline cursor-pointer">
+          <a
+            href="https://calendly.com/kiento0905-hec/new-meeting"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline cursor-pointer"
+          >
             Book a free 30-min call
           </a>{" "}
           and we&apos;ll figure it out together.
