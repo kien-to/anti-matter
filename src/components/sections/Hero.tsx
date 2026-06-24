@@ -1,0 +1,85 @@
+import { ButtonLink } from "@/components/ui/button-link";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, Star } from "lucide-react";
+
+const socialProofAvatars = ["KT", "SM", "JP", "AL", "RB"];
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#F0F4FF] to-background pt-20 pb-28 px-4 sm:px-6">
+      {/* Subtle dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #4F46E5 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
+      <div className="relative max-w-6xl mx-auto text-center">
+        {/* Pill badge */}
+        <Badge
+          variant="secondary"
+          className="mb-6 px-4 py-1.5 text-sm font-medium bg-indigo-50 text-indigo-700 border border-indigo-100"
+        >
+          No coding experience needed
+        </Badge>
+
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#0F172A] leading-tight max-w-4xl mx-auto">
+          Your app idea,{" "}
+          <span className="text-primary">built and yours</span>{" "}
+          to keep
+        </h1>
+
+        {/* Sub-headline */}
+        <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          We build your custom app from scratch — then teach you how to maintain,
+          update, and grow it yourself. No coding background required.
+        </p>
+
+        {/* CTAs */}
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <ButtonLink
+            href="#contact"
+            size="lg"
+            className="bg-[#F97316] hover:bg-[#EA6C0A] text-white px-8 h-12 text-base font-semibold transition-colors duration-200 shadow-md shadow-orange-200"
+          >
+            Start Building My App
+            <ArrowRight size={18} className="ml-2" />
+          </ButtonLink>
+          <ButtonLink
+            href="#how-it-works"
+            size="lg"
+            variant="outline"
+            className="px-8 h-12 text-base transition-colors duration-200"
+          >
+            See How It Works
+          </ButtonLink>
+        </div>
+
+        {/* Social proof bar */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-muted-foreground">
+          <div className="flex -space-x-2">
+            {socialProofAvatars.map((initials) => (
+              <div
+                key={initials}
+                className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 border-2 border-white flex items-center justify-center text-xs font-semibold"
+              >
+                {initials}
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-1">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
+            ))}
+          </div>
+          <span>
+            <strong className="text-foreground">120+ founders</strong> launched their apps with Gojo
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
